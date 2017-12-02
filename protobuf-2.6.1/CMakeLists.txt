@@ -69,11 +69,11 @@ else ()
   include_directories(tq)
 endif()
 
-add_library(protobuf STATIC ${SRC})
+add_library(protobuf-static STATIC ${SRC})
 
-add_library(protobuf-lite STATIC ${LITE_SRC})
+add_library(protobuf-lite-static STATIC ${LITE_SRC})
 
-install(TARGETS protobuf protobuf-lite DESTINATION lib)
+install(TARGETS protobuf-static protobuf-lite-static DESTINATION lib)
 
 install(FILES
   src/google/protobuf/descriptor.h

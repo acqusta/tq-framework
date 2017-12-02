@@ -1,6 +1,14 @@
 project(libsodium)
 
-add_definitions ( -fPIC )
+if (UNIX)
+  add_definitions ( -fPIC )
+else()
+  add_definitions(
+    -Dinline=__inline
+    -DSODIUM_STATIC
+    -DSODIUM_EXPORT=
+  )
+endif()
 
 include_directories(
   src/libsodium/include
@@ -117,7 +125,8 @@ set(SRC
   src/libsodium/sodium/version.c
   )
 
-add_library(sodium STATIC ${SRC})
+add_library(sodium-static STATIC ${SRC})
 
+install(TARGETS sodium-static DESTINATION lib)
 install(DIRECTORY src/libsodium/include/sodium DESTINATION include)
 install(DIRECTORY tq/sodium DESTINATION include)

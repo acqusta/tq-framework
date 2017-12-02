@@ -4,8 +4,6 @@ project(glog)
 
 set(CMAKE_INSTALL_PREFIX "dist")
 
-include_directories( tq )
-
 set(SRC
   src/logging.cc
   src/raw_logging.cc
@@ -18,6 +16,7 @@ set(SRC
 add_definitions( -DGOOGLE_GLOG_DLL_DECL= )
 
 if (WIN32)
+  add_definitions( -DHAVE_SNPRINTF=1 )
 
   list(APPEND SRC
     src/windows/port.cc
@@ -38,13 +37,13 @@ else()
     )
 endif()
 
-add_library(glog STATIC ${SRC})
+add_library(glog-static STATIC ${SRC})
 
 if (UNIX)
-  target_link_libraries(glog pthread)
+  target_link_libraries(glog-static pthread)
 endif()
 
-install(TARGETS glog DESTINATION lib)
+install(TARGETS glog-static DESTINATION lib)
 
 if (UNIX)
   install(FILES
@@ -53,5 +52,13 @@ if (UNIX)
     tq/glog/raw_logging.h
     tq/glog/stl_logging.h
     tq/glog/vlog_is_on.h
+    DESTINATION include/glog)
+else()
+  install(FILES
+    src/glog/log_severity.h
+    src/windows/glog/logging.h
+    src/windows/glog/raw_logging.h
+    src/windows/glog/stl_logging.h
+    src/windows/glog/vlog_is_on.h
     DESTINATION include/glog)
 endif()
