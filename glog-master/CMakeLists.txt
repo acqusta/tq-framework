@@ -14,7 +14,10 @@ set(SRC
   src/signalhandler.cc
   )
 
-add_definitions( -DGOOGLE_GLOG_DLL_DECL= )
+add_definitions(
+  -DGOOGLE_GLOG_DLL_DECL=
+  -DHAVE_CONFIG_H
+  )
 
 if (WIN32)
   add_definitions( -DHAVE_SNPRINTF=1 )
@@ -25,13 +28,22 @@ if (WIN32)
   include_directories( src/windows )
 
 else()
-  include_directories(
-    tq
-    src/linux
-    src)
-
+  if (APPLE)
+    include_directories(
+      tq
+      tq/osx
+      src
+      )
+  else()
+    include_directories(
+      tq
+      tq/linux
+      src
+      )
+  endif()
   add_definitions (
-    -DHAVE_CONFIG_H -Wall -Wwrite-strings -Woverloaded-virtual -Wno-sign-compare
+    -DHAVE_CONFIG_H
+    -Wall -Wwrite-strings -Woverloaded-virtual -Wno-sign-compare
     -DNO_FRAME_POINTER
     -DNDEBUG
     #    -fvisibility=hidden

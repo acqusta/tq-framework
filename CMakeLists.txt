@@ -21,9 +21,8 @@ set(SOCI_LIBDIR  "lib")
 
 set(SQLITE3_INCLUDE_DIR sqlite3.11)
 set(SQLITE3_LIBRARY   sqlite3)
+
 include_directories( sqlite3.11 )
-
-
 
 add_subdirectory(glog-master)
 add_subdirectory(protobuf-2.6.1)
@@ -33,4 +32,6 @@ add_subdirectory(soci-master)
 add_subdirectory(sqlite3.11)
 add_subdirectory(zlib-1.2.11)
 
-install(DIRECTORY tdb tdf ctp_v6.3.6 DESTINATION .)
+if (NOT APPLE)
+  install(DIRECTORY tdb tdf ctp_v6.3.6 DESTINATION .)
+endif()
