@@ -11,6 +11,7 @@ set(SRC
   src/vlog_is_on.cc
   src/symbolize.cc
   src/demangle.cc
+  src/signalhandler.cc
   )
 
 add_definitions( -DGOOGLE_GLOG_DLL_DECL= )
