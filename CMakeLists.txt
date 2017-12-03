@@ -2,11 +2,7 @@ cmake_minimum_required(VERSION 2.8)
     
 project(tq_framework)
 
-if (WIN32)
-  set(CMAKE_INSTALL_PREFIX "dist/${CMAKE_VS_PLATFORM_NAME}/${CMAKE_INT_DIR}/")
-else()
-  set(CMAKE_INSTALL_PREFIX "dist")
-endif()
+set(CMAKE_INSTALL_PREFIX "dist")
 
 add_definitions ( -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS)
 
