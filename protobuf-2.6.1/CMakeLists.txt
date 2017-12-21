@@ -132,4 +132,5 @@ install(FILES
   src/google/protobuf/stubs/stl_util.h
   src/google/protobuf/stubs/template_util.h
   src/google/protobuf/stubs/type_traits.h
-  DESTINATION include/google/protobuf/stubs)
+  DESTINATION include/google/protobuf/stubs
+  )

@@ -381,6 +381,7 @@ DECLARE_int32(max_log_size);
 DECLARE_bool(stop_logging_if_full_disk);
 
 DECLARE_bool(tzxu_simple_format);
+DECLARE_bool(tzxu_one_day_file);
 
 #ifdef MUST_UNDEF_GFLAGS_DECLARE_MACROS
 #undef MUST_UNDEF_GFLAGS_DECLARE_MACROS

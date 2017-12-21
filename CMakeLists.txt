@@ -7,7 +7,10 @@ set(CMAKE_INSTALL_PREFIX "dist")
 add_definitions ( -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS)
 
 if (UNIX)
-  add_definitions(-fPIC)
+  add_definitions(
+    -fPIC
+    -std=c++11
+    )
 endif()
 
 set(SOCI_STATIC OFF)
