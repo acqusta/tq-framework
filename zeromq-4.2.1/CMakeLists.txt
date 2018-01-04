@@ -773,7 +773,7 @@ else ()
     set_target_properties (zmq-static PROPERTIES
       PUBLIC_HEADER "${public_headers}"
       COMPILE_DEFINITIONS "ZMQ_STATIC"
-      OUTPUT_NAME "zmq-static"
+      OUTPUT_NAME "libzmq-static"
       PREFIX "")
 endif ()
 
