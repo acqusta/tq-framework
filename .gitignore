@@ -2,5 +2,4 @@
 build
 build-win32
 build_x86
-x64
-Win32
+build_x64
