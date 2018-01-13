@@ -56,6 +56,15 @@ boost_report_value(SOCI_ASAN)
 # from SociConfig.cmake
 boost_report_value(SOCI_CXX_C11)
 
+# TQUANT FRAMEWORK
+# Enable mysql on Wndows
+if (WIN32)
+  set(MYSQL_INCLUDE_DIR ../windows/inc)
+  set(MYSQL_LIBRARIES  libmysql)
+  include_directories( ../windows/inc)
+  link_directories( ../windows/lib/${CMAKE_VS_PLATFORM_NAME})
+endif()
+
 # Put the libaries and binaries that get built into directories at the
 # top of the build tree rather than in hard-to-find leaf
 # directories. This simplifies manual testing and the use of the build
