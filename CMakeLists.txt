@@ -29,7 +29,7 @@ include_directories( sqlite3.11 )
 
 add_subdirectory(glog-master)
 add_subdirectory(protobuf-2.6.1)
-add_subdirectory(zeromq-4.2.1)
+add_subdirectory(zeromq-4.2.5)
 add_subdirectory(libsodium-1.0.12)
 add_subdirectory(soci-master)
 add_subdirectory(sqlite3.11)
