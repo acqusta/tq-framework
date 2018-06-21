@@ -1101,7 +1101,7 @@ endif ()
 #-----------------------------------------------------------------------------
 # tests
 
-option(BUILD_TESTS "Whether or not to build the tests" ON)
+option(BUILD_TESTS "Whether or not to build the tests" OFF)
 
 set (ZMQ_BUILD_TESTS ${BUILD_TESTS} CACHE BOOL "Build the tests for ZeroMQ")
 

@@ -18,7 +18,7 @@ include_directories   (
 link_directories      (${sodium_LIB_DIR} )
 
 add_definitions(
-  -DZMQ_USE_LIBSODIUM=1
+#  -DZMQ_USE_LIBSODIUM=1
   -DSODIUM_STATIC
   -DSODIUM_EXPORT=
   )
