@@ -36,7 +36,7 @@ add_subdirectory(sqlite3.11)
 add_subdirectory(zlib-1.2.11)
 
 if (NOT APPLE)
-  install(DIRECTORY tdb tdf ctp_v6.3.6 DESTINATION .)
+  install(DIRECTORY tdb tdf ctp_v6.3.15 DESTINATION .)
 endif()
 
 if (WIN32)
