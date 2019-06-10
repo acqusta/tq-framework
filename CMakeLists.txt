@@ -37,6 +37,7 @@ add_subdirectory(zlib-1.2.11)
 
 if (NOT APPLE)
   install(DIRECTORY tdb tdf ctp_v6.3.15 DESTINATION .)
+  install(DIRECTORY ctp_v6.3.6 DESTINATION .)
 endif()
 
 if (WIN32)
